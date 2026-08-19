@@ -1,15 +1,12 @@
-﻿
 using System;
 
 namespace SpaceBattleGame
 {
-    // Interface
     interface IAttack
     {
         void Attack(Alien alien);
     }
 
-    // Abstract Class
     abstract class Character
     {
         protected string name;
@@ -44,7 +41,6 @@ namespace SpaceBattleGame
         }
     }
 
-    // Weapon Class
     class Weapon
     {
         public string WeaponName;
@@ -56,7 +52,6 @@ namespace SpaceBattleGame
             Damage = damage;
         }
 
-        // Operator Overloading
         public static bool operator >(Weapon w1, Weapon w2)
         {
             return w1.Damage > w2.Damage;
@@ -68,7 +63,6 @@ namespace SpaceBattleGame
         }
     }
 
-    // Spaceship Class
     class Spaceship
     {
         public string ShipName;
@@ -82,7 +76,6 @@ namespace SpaceBattleGame
             Energy = 100;
         }
 
-        // Constructor Overloading
         public Spaceship(string shipName, int fuel, int energy)
         {
             ShipName = shipName;
@@ -90,7 +83,6 @@ namespace SpaceBattleGame
             Energy = energy;
         }
 
-        // Copy Constructor
         public Spaceship(Spaceship s)
         {
             ShipName = s.ShipName;
@@ -99,7 +91,6 @@ namespace SpaceBattleGame
         }
     }
 
-    // Player Class
     class Player : Character, IAttack
     {
         public Spaceship Ship;
@@ -142,7 +133,6 @@ namespace SpaceBattleGame
             }
         }
 
-        // Function Overloading
         public void Attack(Alien alien, int bonusDamage)
         {
             if (Ship.Energy >= 15)
@@ -163,7 +153,6 @@ namespace SpaceBattleGame
         }
     }
 
-    // Alien Class
     class Alien : Character
     {
         public int Damage;
@@ -192,7 +181,6 @@ namespace SpaceBattleGame
         }
     }
 
-    // Planet Class
     class Planet
     {
         public string PlanetName;
@@ -231,7 +219,6 @@ namespace SpaceBattleGame
         }
     }
 
-    // Inventory Class
     class Inventory
     {
         string[] items = new string[10];
@@ -280,7 +267,6 @@ namespace SpaceBattleGame
     {
         static int AlienDefeated = 0;
 
-        // Static Method
         public static void ShowResult()
         {
             Console.WriteLine(
@@ -339,7 +325,6 @@ namespace SpaceBattleGame
                     break;
             }
 
-            // Copy Constructor
             Spaceship backupShip =
                 new Spaceship(ship);
 
@@ -477,7 +462,7 @@ namespace SpaceBattleGame
                             Console.WriteLine(
                                 "Alien Scout Defeated!");
                         }
-                        break;
+                        break
 
                     case 7:
                         player.Attack(alien2, 10);
