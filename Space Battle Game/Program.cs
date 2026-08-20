@@ -462,7 +462,7 @@ namespace SpaceBattleGame
                             Console.WriteLine(
                                 "Alien Scout Defeated!");
                         }
-                        break
+                        break;
 
                     case 7:
                         player.Attack(alien2, 10);
